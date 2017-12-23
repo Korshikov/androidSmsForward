@@ -18,7 +18,10 @@ public interface ExportChanelDao {
   List<ExportChanel> getExportChanels();
 
   @Query("SELECT * FROM ExportChanel WHERE id IN (:ids)")
-  List<ExportChanel> getChanelById(int... ids);
+  List<ExportChanel> getChanelByIds(int... ids);
+
+  @Query("SELECT * FROM ExportChanel WHERE id = :id")
+  ExportChanel getChanelById(int id);
 
   @Insert
   void insertChannels(ExportChanel... channels);

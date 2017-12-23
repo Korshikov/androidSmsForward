@@ -1,10 +1,10 @@
 package ru.delfserver.collector.dao;
 
 import android.arch.persistence.room.Dao;
+import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
 import java.util.List;
-import ru.delfserver.collector.entity.SmsFilter;
 import ru.delfserver.collector.entity.SmsFilterDestination;
 
 /**
@@ -17,7 +17,13 @@ public interface SmsFilterDestinationDao {
   List<SmsFilterDestination> getSmsFilterDestinations(int filter_id);
 
   @Insert
-  void insertSmsFilterSestinations(SmsFilterDestination... destinations);
+  void insertSmsFilterDestinations(SmsFilterDestination... destinations);
+
+  @Delete
+  void deleteSmsFilterDestination(int... ids);
+
+  @Delete
+  void deleteSmsFilterDestination(int id);
 
 
 }
